@@ -7,17 +7,33 @@ void solve() {
     int a, b, c;
     cin >> a >> b >> c;
 
-    int mx = a * b * c;
-    for (int i = 0; i <= 5; ++i) {
-        for (int j = 0; j <= 5 - i; ++j) {
-            int k = 5 - i - j;
-            if (k < 0) {
-                continue;
-            }
-            mx = max(mx, (a + i) * (b + j) * (c + k));
-        }
+    multiset<int> set;
+    set.emplace(a);
+    set.emplace(b);
+    set.emplace(c);
+    for (int i = 0; i < 5; ++i) {
+        int v = *set.begin();
+        set.extract(v);
+        set.emplace(v + 1);
     }
-    cout << mx << "\n";
+
+    int ans = 1;
+    for (auto& v : set) {
+        ans *= v;
+    }
+    cout << ans << "\n";
+
+    // int mx = a * b * c;
+    // for (int i = 0; i <= 5; ++i) {
+    //     for (int j = 0; j <= 5 - i; ++j) {
+    //         int k = 5 - i - j;
+    //         if (k < 0) {
+    //             continue;
+    //         }
+    //         mx = max(mx, (a + i) * (b + j) * (c + k));
+    //     }
+    // }
+    // cout << mx << "\n";
 }
 
 int main() {
