@@ -4,6 +4,24 @@ using namespace std;
 using ll = long long;
 
 void solve() {
+    vector<int> vec(3);
+    for (int& v : vec) {
+        cin >> v;
+    }
+
+    for (int i = 0; i < 5; ++i) {
+        ranges::sort(vec);
+        vec[0]++;
+    }
+
+    int ans = 1;
+    for (int& v : vec) {
+        ans *= v;
+    }
+    cout << ans << "\n";
+}
+
+void origin_solve() {
     int a, b, c;
     cin >> a >> b >> c;
 

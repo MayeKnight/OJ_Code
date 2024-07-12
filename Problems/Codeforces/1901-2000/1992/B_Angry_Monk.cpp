@@ -4,17 +4,16 @@ using namespace std;
 using ll = long long;
 
 void solve() {
-    int n, m, k;
-    cin >> n >> m >> k;
-
-    vector<int> vec(n);
-    iota(vec.begin(), vec.end(), 1);
-    ranges::sort(vec, greater<>());
-    reverse(vec.end() - m, vec.end());
+    int n, k;
+    cin >> n >> k;
+    vector<int> vec(k);
     for (int& v : vec) {
-        cout << v << " ";
+        cin >> v;
     }
-    cout << "\n";
+
+    ranges::sort(vec);
+
+    cout << accumulate(vec.begin(), vec.end() - 1, 0ll) * 2 - k + 1 << "\n";
 }
 
 int main() {
