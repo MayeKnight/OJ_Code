@@ -19,9 +19,9 @@ public:
     ListNode* modifiedList(vector<int>& nums, ListNode* head) {
         set<int> set(nums.begin(), nums.end());
 
-        ListNode* yummy = new ListNode();
-        yummy->next = head;
-        ListNode* cur = yummy;
+        ListNode* dummy = new ListNode();
+        dummy->next = head;
+        ListNode* cur = dummy;
         while (cur->next != nullptr) {
             if (set.contains(cur->next->val)) {
                 cur->next = cur->next->next;
@@ -30,8 +30,8 @@ public:
             }
         }
 
-        ListNode* ans = yummy->next;
-        delete yummy;
+        ListNode* ans = dummy->next;
+        delete dummy;
         return ans;
     }
 
@@ -42,9 +42,9 @@ public:
             ump[num]++;
         }
 
-        ListNode* yummy = new ListNode();
-        yummy->next = head;
-        ListNode* cur = yummy;
+        ListNode* dummy = new ListNode();
+        dummy->next = head;
+        ListNode* cur = dummy;
 
         vector<int> vec;
         while (head != nullptr) {
@@ -60,7 +60,7 @@ public:
             cur->next = node;
             cur = node;
         }
-        return yummy->next;
+        return dummy->next;
     }
 };
 

@@ -2,6 +2,10 @@
 
 using namespace std;
 
+/*
+    https://www.luogu.com.cn/problem/P3173
+*/
+
 class Solution {
 public:
     long long minimumCost(int m, int n, vector<int>& hCut, vector<int>& vCut) {
