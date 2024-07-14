@@ -15,8 +15,9 @@
 | P4054 | https://www.luogu.com.cn/problem/P4054 | 树状数组                 |
 | P4113 | https://www.luogu.com.cn/problem/P4113 | 树状数组，可持久化线段树 |
 | P3960 | https://www.luogu.com.cn/problem/P3960 | 树状数组，线段树，平衡树 |
-|       |                                        |                          |
-|       |                                        |                          |
+| P3336 | https://www.luogu.com.cn/problem/P3336 | dp                       |
+| P2679 | https://www.luogu.com.cn/problem/P2679 | dp，枚举，字符串         |
+| P5301 | https://www.luogu.com.cn/problem/P5301 |                          |
 |       |                                        |                          |
 |       |                                        |                          |
 |       |                                        |                          |

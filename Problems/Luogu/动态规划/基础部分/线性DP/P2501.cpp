@@ -50,7 +50,9 @@ void solve() {
     for (int i = 1; i <= n + 1; ++i) {
         for (int p = 0; p < f[record[i] - 1].size(); ++p) {
             int j = f[record[i] - 1][p];
-            if (j > i || res[j] > res[i]) continue;
+            if (j > i || res[j] > res[i]) {
+                continue;
+            }
 
             pre1[i] = pre2[j] = 0;
             for (int q = i - 1; q > j; --q) {
