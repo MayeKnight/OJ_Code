@@ -1,11 +1,11 @@
 ---
 Language: Cpp
 
-# BasedOnStyle:  Google
+BasedOnStyle: Google  # Microsoft # LLVM # Google
 
 # 对齐
 AccessModifierOffset: -4 # 访问修改器偏移量
-AlignAfterOpenBracket: BlockIndent # Align
+AlignAfterOpenBracket: Align # AlwaysBreak # DontAlign # BlockIndent # Align
 AlignArrayOfStructures: Left
 AlignConsecutiveAssignments:
   Enabled:         false
@@ -33,7 +33,7 @@ AlignConsecutiveMacros:
   PadOperators:    false
 
 AlignEscapedNewlines: Left
-AlignOperands:   Align
+AlignOperands: Align # DontAlign # Align
 AlignTrailingComments:
   # Kind:            Always
   Kind:            Never
@@ -94,7 +94,7 @@ BreakConstructorInitializers: BeforeColon
 BreakInheritanceList: BeforeColon
 BreakStringLiterals: true
 
-ColumnLimit:     150
+ColumnLimit:     200
 CommentPragmas:  '^ IWYU pragma:'
 CompactNamespaces: false
 ConstructorInitializerIndentWidth: 4

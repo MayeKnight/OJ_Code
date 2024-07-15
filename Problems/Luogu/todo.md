@@ -18,8 +18,8 @@
 | P3336 | https://www.luogu.com.cn/problem/P3336 | dp                       |
 | P2679 | https://www.luogu.com.cn/problem/P2679 | dp，枚举，字符串         |
 | P5301 | https://www.luogu.com.cn/problem/P5301 |                          |
-|       |                                        |                          |
-|       |                                        |                          |
+| P5020 | https://www.luogu.com.cn/problem/P5020 | 背包，贪心，数学         |
+| P5289 | https://www.luogu.com.cn/problem/P5289 |                          |
 |       |                                        |                          |
 |       |                                        |                          |
 |       |                                        |                          |
