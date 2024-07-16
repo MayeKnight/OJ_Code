@@ -1,14 +1,14 @@
 | 题号  |                  链接                  | 标签                     |
 | :---: | :------------------------------------: | :----------------------- |
 | P1199 | https://www.luogu.com.cn/problem/P1199 | 贪心，博弈               |
-| P2123 | https://www.luogu.com.cn/problem/P2123 | 贪心                     |
-| P5521 | https://www.luogu.com.cn/problem/P5521 | 贪心，dfs                |
+| P2123 | https://www.luogu.com.cn/problem/P2123 |                          |
+| P5521 | https://www.luogu.com.cn/problem/P5521 |                          |
 | P3599 | https://www.luogu.com.cn/problem/P3599 | 数学，构造               |
-| P5441 | https://www.luogu.com.cn/problem/P5441 | 数学，组合数学，构造     |
+| P5441 | https://www.luogu.com.cn/problem/P5441 |                          |
 | P5595 | https://www.luogu.com.cn/problem/P5595 | 构造                     |
 | P1175 | https://www.luogu.com.cn/problem/P1175 | 模拟，栈                 |
-| P4185 | https://www.luogu.com.cn/problem/P4185 | 并查集，连通块           |
-| P5012 | https://www.luogu.com.cn/problem/P5012 | 带权并查集               |
+| P4185 | https://www.luogu.com.cn/problem/P4185 | 并查集                   |
+| P5012 | https://www.luogu.com.cn/problem/P5012 |                          |
 | P5344 | https://www.luogu.com.cn/problem/P5344 | LCA，ST表                |
 | P2048 | https://www.luogu.com.cn/problem/P2048 | 贪心，堆，ST表，前缀和   |
 | P3586 | https://www.luogu.com.cn/problem/P3586 | 离线树状数组，在线平衡树 |
@@ -20,8 +20,8 @@
 | P5301 | https://www.luogu.com.cn/problem/P5301 |                          |
 | P5020 | https://www.luogu.com.cn/problem/P5020 | 背包，贪心，数学         |
 | P5289 | https://www.luogu.com.cn/problem/P5289 |                          |
-|       |                                        |                          |
-|       |                                        |                          |
+| P4302 | https://www.luogu.com.cn/problem/P4302 | 区间DP                   |
+| P2466 | https://www.luogu.com.cn/problem/P2466 |                          |
 |       |                                        |                          |
 |       |                                        |                          |
 |       |                                        |                          |
