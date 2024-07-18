@@ -2,8 +2,6 @@
 using namespace std;
 
 /*
-    加法、乘法每一步均取余即可
-    减法    (a - b + mod) % mod
     除法：
         前提：1> 每步除法必须整除  2> mod 是质数  3> 除数和 mod 互质
         (a / b) % mod  <==> (a % mod * (b ^ -1)) % mod
