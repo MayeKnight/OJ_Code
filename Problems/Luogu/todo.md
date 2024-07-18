@@ -22,7 +22,7 @@
 | P5289 | https://www.luogu.com.cn/problem/P5289 |                          |
 | P4302 | https://www.luogu.com.cn/problem/P4302 | 区间DP                   |
 | P2466 | https://www.luogu.com.cn/problem/P2466 |                          |
-|       |                                        |                          |
+| P2292 | https://www.luogu.com.cn/problem/P2292 | 状压，AC自动机           |
 |       |                                        |                          |
 |       |                                        |                          |
 |       |                                        |                          |
