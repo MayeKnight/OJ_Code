@@ -23,6 +23,7 @@
 | P4302 | https://www.luogu.com.cn/problem/P4302 | 区间DP                   |
 | P2466 | https://www.luogu.com.cn/problem/P2466 |                          |
 | P2292 | https://www.luogu.com.cn/problem/P2292 | 状压，AC自动机           |
-|       |                                        |                          |
-|       |                                        |                          |
-|       |                                        |                          |
+| P3065 | https://www.luogu.com.cn/problem/P3065 | tarjan / 拓扑，Trie      |
+| P3294 | https://www.luogu.com.cn/problem/P3294 |                          |
+| P4407 | https://www.luogu.com.cn/problem/P4407 |                          |
+| P3783 | https://www.luogu.com.cn/problem/P3783 | 虚树，Trie               |
