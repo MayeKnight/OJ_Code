@@ -4,14 +4,11 @@ using namespace std;
 
 class Solution {
 public:
-    string getSmallestString(string s) {
-        for (int i = 1; i < s.size(); ++i) {
-            if (s[i] % 2 == s[i - 1] % 2 && s[i] < s[i - 1]) {
-                swap(s[i], s[i - 1]);
-                break;
-            }
+    int minChanges(int n, int k) {
+        if ((n ^ k) & k) {
+            return -1;
         }
-        return s;
+        return __builtin_popcount(n ^ k);
     }
 };
 

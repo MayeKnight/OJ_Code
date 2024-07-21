@@ -4,9 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-    long long minimumOperations(vector<int>& nums, vector<int>& target) {
-        
-    }
+    string losingPlayer(int x, int y) { return min(x, y / 4) & 1 ? "Alice" : "Bob"; }
 };
 
 int main() {
