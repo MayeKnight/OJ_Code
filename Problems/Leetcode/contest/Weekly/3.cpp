@@ -5,17 +5,22 @@ using namespace std;
 class Solution {
 public:
     int maxOperations(string s) {
-        long long ans = 0, cnt = 1;
-        int n = s.size();
-        for (int i = 0; i < n - 1; ++i) {
-            if (s[i] == '1' && s[i + 1] == '0') {
+        int ans = 0, cnt = 0;
+        for (int i = 0; i < s.size(); ++i) {
+            if (s[i] == '1') {
+                cnt++;
+            } else if (i && s[i - 1] == '1') {
                 ans += cnt;
             }
-            while (i < n - 1 && s[i + 1] != '1') {
-                i++;
-            }
-            cnt++;
         }
+        // Or: 
+        // for (int i = s.size() - 1; i >= 0; --i) {
+        //     if (s[i] == '1') {
+        //         ans += cnt;
+        //     } else if (i && s[i - 1] == '1') {
+        //         cnt++;
+        //     }
+        // }
         return ans;
     }
 };

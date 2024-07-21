@@ -6,13 +6,12 @@ class Solution {
 public:
     bool doesAliceWin(string s) {
         set<char> set {'a', 'e', 'i', 'o', 'u'};
-        int cnt = 0;
         for (char ch : s) {
             if (set.contains(ch)) {
-                cnt++;
+                return true;
             }
         }
-        return cnt;
+        return false;
     }
 };
 
