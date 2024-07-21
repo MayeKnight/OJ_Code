@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-#include "D:\Projects\Code\.headers.hpp"
+#include "..\..\.headers.hpp"
 
 using namespace std;
 using ll = long long;
