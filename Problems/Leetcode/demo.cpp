@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -312,8 +311,7 @@ public:
     int atMostNGivenDigitSet(vector<string>& digits, int n) {
         string s = to_string(n);
         int m = s.size();
-        int dp[m];
-        memset(dp, -1, sizeof(dp));
+        vector<int> dp(m, -1);
 
         function<int(int, bool, bool)> f = [&](int i, bool free, bool fix) -> int {
             if (i == m) { // 填了数字，则为 1 种合法方案
