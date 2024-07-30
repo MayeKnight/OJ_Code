@@ -17,6 +17,9 @@ auto print_seq = [](auto rem, auto first, auto last) {
 };
 
 int main() {
+    std::vector<int> vec {1, 2, 4};
+    std::cout << std::boolalpha << is_sorted(vec.begin(), vec.end()) << "\n";
+
     std::bitset<5> bits(5);
     for (int i = 0; i < 5; ++i) {
         std::cout << bits.test(i) << "\n";
