@@ -24,26 +24,6 @@ void solve() {
     }
 
     cout << ans * 2 << "\n";
-
-    // vector<int> flag(n);
-    // int ans = 0;
-    // for (int i = 0; i < n; ++i) {
-    //     if (flag[i] == 1) {
-    //         continue;
-    //     }
-
-    //     for (int j = i + 1; j < n; ++j) {
-    //         if (flag[j] == 1) {
-    //             continue;
-    //         }
-    //         if ((vec[i] + vec[j]) % k == 0) {
-    //             flag[i] = 1, flag[j] = 1;
-    //             ans += 2;
-    //             break;
-    //         }
-    //     }
-    // }
-    // cout << ans << "\n";
 }
 
 signed main() {
