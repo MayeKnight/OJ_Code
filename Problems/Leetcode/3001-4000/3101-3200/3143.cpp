@@ -17,17 +17,17 @@ public:
 
         set<int> set;
         int ans = 0;
-        for (int i = 0, j = i; i < n; i = j) {
-            int v = vec[j].first;
-            while (j < n && vec[j].first == v) {
-                if (set.contains(vec[j].second)) {
+        for (int i = 0; i < n;) {
+            int j = i, v = vec[j].first;
+            while (i < n && vec[i].first == v) {
+                if (set.contains(vec[i].second)) {
                     return ans;
                 } else {
-                    set.insert(vec[j].second);
-                    j++;
+                    set.insert(vec[i].second);
+                    i++;
                 }
             }
-            ans += j - i;
+            ans += i - j;
         }
         return ans;
     }
@@ -98,14 +98,6 @@ int main() {
         {3,  -3}
     };
     sol.maxPointsInsideSquare(points, "abdca");
-    /*
-        [[-1,-4],[16,-8],[13,-3],[-12,0]]
-        "abda"
-
-        预期 1
-
-        错误原因：应该输出包含的点数，而不是 l 的长度
-    */
 
     return 0;
 }
