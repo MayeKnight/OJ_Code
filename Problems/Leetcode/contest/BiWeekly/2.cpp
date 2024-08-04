@@ -6,27 +6,28 @@ static constexpr int MOD = 1e9 + 7;
 
 class Solution {
 public:
-    int minFlips(vector<vector<int>>& grid) {
-        int m = grid.size(), n = grid[0].size();
-        int rc = 0, cc = 0;
+    int minFlips(vector<vector<int>>& vec) {
+        int n = vec.size(), m = vec[0].size();
 
-        for (int i = 0; i < m; ++i) {
-            for (int j = 0; j < n / 2; ++j) {
-                if (grid[i][j] != grid[i][n - 1 - j]) {
-                    rc++;
+        int res1 = 0;
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m / 2; ++j) {
+                if (vec[i][j] != vec[i][m - 1 - j]) {
+                    res1++;
                 }
             }
         }
 
-        for (int j = 0; j < n; ++j) {
-            for (int i = 0; i < m / 2; ++i) {
-                if (grid[i][j] != grid[m - 1 - i][j]) {
-                    cc++;
+        int res2 = 0;
+        for (int i = 0; i < n / 2; ++i) {
+            for (int j = 0; j < m; ++j) {
+                if (vec[i][j] != vec[n - 1 - i][j]) {
+                    res2++;
                 }
             }
         }
 
-        return min(rc, cc);
+        return min(res1, res2);
     }
 };
 
