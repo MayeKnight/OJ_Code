@@ -3,36 +3,40 @@
 using namespace std;
 using ll = long long;
 
-/*
-    树上倍增：
-        要预处理哪些节点？
-*/
-
 class TreeAncestor {
-private:
     vector<vector<int>> pa;
 
 public:
     TreeAncestor(int n, vector<int>& parent) {
-        int m = 32 - __builtin_clz(n);
-        pa.resize(n, vector<int>(m, -1));
-
-        // 遍历每一个节点，令第一个索引为父节点
+        int len = bit_width(n * 1ull);
+        pa.resize(n, vector<int>(len, -1));
         for (int i = 0; i < n; ++i) {
             pa[i][0] = parent[i];
         }
-        // 遍历数组，填充索引
-        for (int j = 0; j < m - 1; ++j) {
-            for (int i = 0; i < n; ++i) {
-                int p = pa[i][j];
+        for (int i = 1; i < len; ++i) {
+            for (int x = 0; x < n; ++x) {
+                int p = pa[x][i - 1];
                 if (p != -1) {
-                    pa[i][j + 1] = pa[p][j]; // 更新下一个索引
+                    pa[x][i] = pa[p][i - 1];
                 }
             }
         }
     }
 
     int getKthAncestor(int node, int k) {
+        int len = bit_width(k * 1ull);
+        for (int i = 0; i < len; ++i) {
+            if (k >> i & 1) {
+                node = pa[node][i];
+                if (node < 0) {
+                    break;
+                }
+            }
+        }
+        return node;
+    }
+
+    int getKthAncestor2(int node, int k) {
         for (; k && ~node; k &= k - 1) {
             node = pa[node][__builtin_ctz(k)];
         }
