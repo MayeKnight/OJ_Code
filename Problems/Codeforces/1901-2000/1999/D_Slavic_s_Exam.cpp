@@ -13,24 +13,18 @@ void solve() {
     int n = s.size(), m = t.size();
     int j = 0;
     for (int i = 0; i < n && j < m; ++i) {
-        if (s[i] == t[j]) {
-            j++;
-        } else if (s[i] == '?') {
+        if (s[i] == t[j] || s[i] == '?') {
             s[i] = t[j];
             j++;
         }
     }
     if (j == m) {
         cout << "YES\n";
-        for (int i = 0; i < n; ++i) {
-            if (s[i] == '?') {
-                s[i] = 'a';
-            }
-        }
+        replace(s.begin(), s.end(), '?', 'a');
         cout << s << "\n";
-        return;
+    } else {
+        cout << "NO\n";
     }
-    cout << "NO\n";
 }
 
 int main() {

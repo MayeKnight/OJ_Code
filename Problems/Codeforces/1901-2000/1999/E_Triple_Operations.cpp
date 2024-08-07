@@ -6,23 +6,29 @@ using ull = unsigned long long;
 
 static constexpr int MOD = 1e9 + 7;
 
-const vector<int> vec {0, 1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683, 59049, 177147, 531441};
-
 void solve() {
     int l, r;
     cin >> l >> r;
 
-    auto f = [&](int v) {
-        int l = 0, r = 13;
-        while (l + 1 < r) {
-            int mid = l + (r - l) / 2;
-            if (vec[mid] > v) {
-                r = mid;
-            } else {
-                l = mid;
-            }
+    int ans = 0;
+    int mn = -1;
+    for (int x = 1, t = 1; x <= r; x *= 3, ++t) {
+        if (l >= x) {
+            mn = t;
         }
-        return l;
+        ans += max(0, min(r, 3 * x - 1) - max(l, x) + 1) * t;
+    }
+    cout << ans + mn << "\n";
+}
+
+void mysolve() {
+    int l, r;
+    cin >> l >> r;
+
+    const vector<int> vec {0, 1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683, 59049, 177147, 531441};
+
+    auto f = [&](int v) {
+        return ranges::upper_bound(vec, v) - vec.begin() - 1;
     };
 
     ll v1 = f(l), v2 = f(r);

@@ -20,6 +20,8 @@ auto print_seq = [](auto rem, auto first, auto last) {
 
     iota
 
+    replace
+
     accumulate  reduce
 
     format

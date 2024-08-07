@@ -19,24 +19,14 @@ void Ans(int a) {
 void solve() {
     int l = 1, r = 999;
     while (l + 1 < r) {
-        if (l + 2 < r) {
-            int x = (2 * l + r) / 3, y = (l + 2 * r) / 3;
-            int v = Ask(x, y);
-            if (v == x * y) {
-                l = y;
-            } else if (v == x * (y + 1)) {
-                l = x;
-                r = y;
-            } else {
-                r = x;
-            }
+        int x = l + (r - l) / 3, y = l + (r - l) * 2 / 3;
+        int val = Ask(x, y);
+        if (val == x * y) {
+            l = y;
+        } else if (val == x * (y + 1)) {
+            l = x, r = y;
         } else {
-            int mid = (l + r) >> 1;
-            if (Ask(1, mid) == mid) {
-                l = mid;
-            } else {
-                r = mid;
-            }
+            r = x;
         }
     }
     Ans(r);
