@@ -8,6 +8,7 @@ constexpr int MOD = 1e9 + 7;
 /*
     归并排序求逆序对
 */
+
 void solve() {
     int n;
     cin >> n;
