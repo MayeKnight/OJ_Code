@@ -14,8 +14,6 @@ void solve() {
     for (int& v : pre) {
         cout << v << " ";
     }
-
-    system("echo Hello > out.txt");
 }
 
 int main() {

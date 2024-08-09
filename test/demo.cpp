@@ -22,7 +22,7 @@ auto print_seq = [](auto rem, auto first, auto last) {
 
     replace
 
-    accumulate  reduce
+    accumulate  reduce  partitial_sum
 
     format
 
