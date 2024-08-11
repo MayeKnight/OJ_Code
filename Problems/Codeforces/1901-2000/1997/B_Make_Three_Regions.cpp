@@ -16,7 +16,7 @@ void solve() {
     int ans = 0;
     for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < n; ++j) {
-            if (vec[i].substr(j, 3) == "..." && vec[(i + 1) % 2].substr(j, 3) == "x.x") {
+            if (vec[i].substr(j, 3) == "..." && vec[i ^ 1].substr(j, 3) == "x.x") {
                 ans++;
             }
         }
