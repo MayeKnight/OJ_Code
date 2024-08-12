@@ -24,3 +24,22 @@ class Solution:
         res = dfs(0, 0, MOD)
         dfs.cache_clear()
         return res
+
+
+class Solution2:
+    def countOfPairs(self, nums: List[int]) -> int:
+        MOD = 1_000_000_007
+        n = len(nums)
+
+        @cache
+        def dfs(i: int, j: int) -> int:
+            if i == 0:
+                return 1
+
+            res = 0
+            mx = min(nums[i - 1], j, nums[i - 1] - nums[i] + j)
+            for k in range(mx + 1):
+                res += dfs(i - 1, k)
+            return res % MOD
+
+        return sum(dfs(n - 1, j) for j in range(nums[-1] + 1)) % MOD

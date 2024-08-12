@@ -6,10 +6,10 @@ using ll = long long;
 static constexpr int MOD = 1e9 + 7;
 
 void solve() {
-    ll n, k;
+    int n, k;
     cin >> n >> k;
-    
-    vector<pair<ll, int>> vec(n);
+
+    vector<pair<int, int>> vec(n);
     for (int i = 0; i < n; ++i) {
         cin >> vec[i].first;
     }
@@ -17,9 +17,9 @@ void solve() {
         cin >> vec[i].second;
     }
 
-    ranges::sort(vec, [&](const auto& p, const auto& q) { return p.first < q.first || p.first == q.first && p.second < q.second; });
+    ranges::sort(vec);
 
-    int l = 0, r = 1e9 + 1;
+    int l = 0, r = vec[n - 1].first + 1;
     while (l + 1 < r) {
         int mid = l + (r - l) / 2;
 
@@ -41,23 +41,15 @@ void solve() {
     }
 
     ll ans = l + vec[n - 1].first;
-    int id = -1;
     for (int i = n - 1; i >= 0; --i) {
         if (vec[i].second == 1) {
-            id = i;
+            vector<int> res;
+            ranges::transform(vec, back_inserter(res), [&](const auto& p) { return p.first; });
+            res.erase(res.begin() + i);
+            ans = max(ans, vec[i].first * 1ll + k + res[n / 2 - 1]);
             break;
         }
     }
-    if (id != -1) {
-        vector<int> res;
-        for (int i = 0; i < n; ++i) {
-            if (i != id) {
-                res.emplace_back(vec[i].first);
-            }
-        }
-        ans = max(ans, vec[id].first + k + res[n / 2 - 1]);
-    }
-
     cout << ans << "\n";
 }
 
