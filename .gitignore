@@ -1,7 +1,6 @@
 # .gitignore file
 .cph/
+.vscode/
 
 build/
 test/
-
-*.json
