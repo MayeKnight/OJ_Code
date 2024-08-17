@@ -10,7 +10,7 @@
                 "-g",
                 // "-Wall",
                 "-o",
-                "${workspaceFolder}/build/${fileBasenameNoExtension}.exe",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}",
                 "${file}"
             ],
             "group": {

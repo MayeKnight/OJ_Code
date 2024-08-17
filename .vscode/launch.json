@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}.exe",
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "C++",
