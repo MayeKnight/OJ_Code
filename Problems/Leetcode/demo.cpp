@@ -97,30 +97,6 @@ public:
         // return dp[n];
     }
 
-    vector<int> leftmostBuildingQueries(vector<int>& heights, vector<vector<int>>& queries) {}
-
-    int maxSatisfied(vector<int>& customers, vector<int>& grumpy, int minutes) {
-        int n = grumpy.size();
-        int ans = 0, cnt = 0, extra = 0;
-
-        for (int l = 0, r = 0; r < n; ++r) {
-            ans += !grumpy[r] * customers[r]; // 统计 0（不生气）对应的顾客数量
-
-            /**
-             * 定长滑窗
-             */
-            cnt += grumpy[r] * customers[r];
-            if (r - l == minutes) {
-                cnt -= grumpy[l] * customers[l];
-                l++;
-            }
-
-            extra = max(extra, cnt);
-        }
-
-        return ans + extra;
-    }
-
     string repeatLimitedString(string s, int repeatLimit) {
         int cnt[26] {};
         for (const char& c : s) {
@@ -149,41 +125,6 @@ public:
         }
 
         return str;
-    }
-
-    // https://leetcode.cn/problems/removing-minimum-number-of-magic-beans
-    long long minimumRemoval(vector<int>& beans) {
-        // 拿出，不能放回；让剩下的非空袋子豆子数量相等
-        sort(beans.begin(), beans.end());
-
-        // 前缀和
-        // 4 1 6 5  -->  1 4 5 6  -->  0 1 5 10 16
-        // 比当前数大的可以选择减少，比当前数小的可以选择全拿走
-        // int n = beans.size();
-        // vector<long long> preSum(n + 1);
-        // for (int i = 0; i < n; ++i) {
-        //     preSum[i + 1] = preSum[i] + beans[i];
-        // }
-
-        // long long ans = 1e11;
-        // for (int i = 0; i < n; ++i) {
-        //     ans = min(ans,
-        //         preSum[n] - preSum[i + 1] - (long long) beans[i] * (n - i - 1) // 后面需要减少的量
-        //         + preSum[i] // 前面需要删除的量
-        //     );
-        // }
-
-        // return ans;
-
-        // * 因此，拿走豆子的数量： total - beans[i] * n'     n' 表示豆子个数不少于 beans[i] 的袋子数量
-        int n = beans.size();
-        long long ans = 1e11;
-        long long total = accumulate(beans.begin(), beans.end(), 0LL);
-        for (int i = 0; i < n; ++i) {
-            ans = min(ans, total - (long long) beans[i] * (n - i));
-        }
-
-        return ans;
     }
 
     // https://leetcode.cn/problems/minimum-time-to-make-array-sum-at-most-x/
@@ -269,40 +210,6 @@ public:
         };
 
         return f(0, false, false);
-    }
-
-    // https://leetcode.cn/problems/split-strings-by-separator/
-    vector<string> splitWordsBySeparator(vector<string>& words, char separator) {
-        vector<string> ans;
-
-        /* Solution 1 */
-        for (string& word : words) {
-            word += separator;
-            string str;
-            for (const char& c : word) {
-                if (c != separator) {
-                    str += c;
-                } else {
-                    if (!str.empty()) {
-                        ans.emplace_back(std::move(str));
-                        str.clear();
-                    }
-                }
-            }
-        }
-
-        /* Solution 2 */
-        for (string& word : words) {
-            stringstream ss(word);
-            string sub;
-            while (getline(ss, sub, separator)) {
-                if (!sub.empty()) {
-                    ans.emplace_back(sub);
-                }
-            }
-        }
-
-        return ans;
     }
 
     // https://leetcode.cn/problems/collecting-chocolates/
@@ -591,24 +498,6 @@ public:
             }
         }
         return false;
-    }
-
-    // https://leetcode.cn/problems/longest-alternating-subarray/
-    int alternatingSubarray(vector<int>& nums) {
-        int n = nums.size(), ans = -1;
-        for (int l = 0, r = 1; r < n; ++r) {
-            if (nums[r] - nums[l] == (r - l) % 2) { // 判断交替
-                ans = max(ans, r - l + 1);
-            } else { // l 的移动需要分情况
-                if (nums[r] - nums[r - 1] == 1) {
-                    l = r - 1;
-                    ans = max(ans, 2);
-                } else {
-                    l = r;
-                }
-            }
-        }
-        return ans;
     }
 
     long long maximumSumOfHeights(vector<int>& maxHeights) {
