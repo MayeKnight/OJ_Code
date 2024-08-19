@@ -12,7 +12,7 @@ void solve() {
     int n, m; // 点的个数，有向边个数
     cin >> n >> m;
 
-    vector<edge> adj[n + 1];
+    vector adj(n + 1, vector<edge>());
     vector<ll> p(n + 1);
     for (int i = 1; i <= n; ++i) {
         cin >> p[i];

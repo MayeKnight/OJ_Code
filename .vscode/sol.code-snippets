@@ -1,0 +1,20 @@
+{
+	"solcpp": {
+		"prefix": "sol",
+		"body": [
+			"#include <bits/stdc++.h>",
+			"",
+			"using namespace std;",
+			"using ll = long long;",
+			"",
+			"$1",
+			"",
+			"int main() {",
+			"    Solution sol;",
+			"",
+			"    return 0;",
+			"}"
+		],
+		"description": "sol"
+	}
+}
