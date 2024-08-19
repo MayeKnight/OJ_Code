@@ -14,7 +14,7 @@ void solve() {
         cin >> v;
     }
 
-    vector<int> res;
+    vector<int> res(n);
     auto dfs = [&](auto&& self, int i, int sum) -> void {
         if (i == n) {
             if (sum % k == 0) {
@@ -26,10 +26,8 @@ void solve() {
             return;
         }
 
-        for (int v = 1; v <= vec[i]; ++v) {
-            res.emplace_back(v);
-            self(self, i + 1, sum + v);
-            res.pop_back();
+        for (res[i] = 1; res[i] <= vec[i]; ++res[i]) {
+            self(self, i + 1, sum + res[i]);
         }
     };
 

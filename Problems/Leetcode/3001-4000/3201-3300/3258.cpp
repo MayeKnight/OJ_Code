@@ -20,6 +20,22 @@ public:
         }
         return cnt;
     }
+
+public:
+    // O(n) 滑窗
+    int countKConstraintSubstrings_2(string s, int k) {
+        int n = s.size();
+        int ans = 0;
+        vector<int> cnt(2);
+        for (int l = 0, r = 0; r < n; ++r) {
+            cnt[s[r] & 1]++;
+            while (cnt[0] > k && cnt[1] > k) {
+                cnt[s[l++] & 1]--;
+            }
+            ans += r - l + 1;
+        }
+        return ans;
+    }
 };
 
 int main() {
