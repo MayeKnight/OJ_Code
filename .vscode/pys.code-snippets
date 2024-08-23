@@ -34,8 +34,7 @@
 			"",
 			"",
 			"if __name__ == \"__main__\":",
-			"    _ = II()",
-			"    for i in range(_):",
+			"    for i in range(II()):",
 			"        solve()",
 			""
 		],
