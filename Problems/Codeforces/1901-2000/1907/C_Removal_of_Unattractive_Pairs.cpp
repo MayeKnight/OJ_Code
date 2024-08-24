@@ -1,22 +1,24 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-using i64 = long long;
+using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int MOD = 1'000'000'007;
 
 void solve() {
     int n;
-    cin >> n;
-    vector<int> a(n);
+    string s;
+    cin >> n >> s;
+
+    vector<int> res(26);
     for (int i = 0; i < n; ++i) {
-        cin >> a[i];
+        res[s[i] - 'a']++;
     }
 
-    cout << (a[0] == 1 ? "YES" : "NO") << "\n";
+    cout << max(ranges::max(res) * 2 - n, n % 2) << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 

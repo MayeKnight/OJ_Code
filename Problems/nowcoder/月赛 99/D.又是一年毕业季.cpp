@@ -31,16 +31,11 @@ void solve() {
     cin >> n;
 
     vector<int> vec(n);
-    for (int i = 0; i < n; ++i) {
-        cin >> vec[i];
+    for (int& v : vec) {
+        cin >> v;
     }
 
     set<int> s(vec.begin(), vec.end());
-    if (!s.contains(2)) {
-        cout << 2 << "\n";
-        return;
-    }
-
     for (int i : Primes) {
         if (!s.contains(i)) {
             cout << i << "\n";

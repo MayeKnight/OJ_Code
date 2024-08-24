@@ -3,6 +3,8 @@
 using namespace std;
 using ll = long long;
 
+static constexpr int MOD = 1'000'000'007;
+
 void solve() {
     int x, y, t;
     cin >> x >> y >> t;
@@ -10,22 +12,17 @@ void solve() {
     if (y < x) { // 先碰到钥匙
         cout << x << "\n";
     } else { // 先碰到宝箱
-        if (x + t >= y) { // 可以搬宝箱到钥匙处
-            cout << y << "\n";
-        } else {
-            cout << y * 2 - x - t << "\n";
-        }
+        cout << y * 2 - min(x + t, y) << "\n";
     }
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

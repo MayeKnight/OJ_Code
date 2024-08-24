@@ -1,25 +1,23 @@
 for _ in range(int(input())):
     s = list(input())
-    n = len(s)
 
-    upper = []
-    lower = []
+    upper, lower = [], []
     for i, v in enumerate(s):
         if v == "b":
             s[i] = ""
             if lower:
                 s[lower.pop()] = ""
-            continue
+            continue  # !
 
         if v == "B":
             s[i] = ""
             if upper:
                 s[upper.pop()] = ""
-            continue
+            continue  # !
 
-        if "a" <= v <= "z":
+        if v.islower():
             lower.append(i)
         else:
             upper.append(i)
 
-    print(''.join(s))
+    print("".join(s))
