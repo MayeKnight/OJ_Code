@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int MOD = 1e9 + 7;
+static constexpr int MOD = 1'000'000'007;
 
 static constexpr int dir[9][2] {
     {0,  0 },
@@ -20,6 +20,7 @@ static constexpr int dir[9][2] {
 void solve() {
     int x, y, m, n;
     cin >> x >> y >> m >> n;
+
     vector<vector<ll>> dp(x + 1, vector<ll>(y + 1, -1));
     for (int i = 0; i <= x; ++i) {
         dp[i][0] = 1;
@@ -63,10 +64,9 @@ void solve() {
     cout << (dp[x][y] <= -1 ? 0 : dp[x][y]) << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.precision(20);
 
     solve();
 
