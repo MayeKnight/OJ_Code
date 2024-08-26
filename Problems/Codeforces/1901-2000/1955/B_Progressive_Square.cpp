@@ -3,7 +3,7 @@
 using namespace std;
 using ll = long long;
 
-constexpr int mod = 1e9 + 7;
+static constexpr int MOD = 1'000'000'007;
 
 void solve() {
     int n, c, d;
@@ -14,7 +14,7 @@ void solve() {
         cin >> v;
     }
     sort(a.begin(), a.end());
-    
+
     for (int i = 0; i < n * n; ++i) {
         b[i] = a[0] + i / n * c + i % n * d;
     }
@@ -35,14 +35,13 @@ void solve() {
     cout << (a == b ? "YES" : "NO") << "\n";
 }
 
-signed main() {
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout.tie(nullptr);
 
-    int count;
-    cin >> count;
-    while (count--) {
+    int T;
+    cin >> T;
+    while (T--) {
         solve();
     }
 

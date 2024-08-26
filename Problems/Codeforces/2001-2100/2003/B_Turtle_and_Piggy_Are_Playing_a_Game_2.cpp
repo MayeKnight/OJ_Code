@@ -6,10 +6,17 @@ using ll = long long;
 static constexpr int MOD = 1'000'000'007;
 
 void solve() {
-    int n, a, b;
-    cin >> n >> a >> b;
+    int n;
+    cin >> n;
 
-    cout << (n / 2) * min(a * 2, b) + (n % 2) * a << "\n";
+    vector<int> vec(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> vec[i];
+    }
+
+    ranges::sort(vec);
+
+    cout << vec[n / 2] << "\n";
 }
 
 int main() {

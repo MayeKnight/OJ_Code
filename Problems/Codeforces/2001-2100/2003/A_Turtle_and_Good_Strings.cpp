@@ -6,10 +6,13 @@ using ll = long long;
 static constexpr int MOD = 1'000'000'007;
 
 void solve() {
-    int n, a, b;
-    cin >> n >> a >> b;
+    int n;
+    cin >> n;
 
-    cout << (n / 2) * min(a * 2, b) + (n % 2) * a << "\n";
+    string s;
+    cin >> s;
+
+    cout << (s.front() == s.back() ? "NO" : "YES") << "\n";
 }
 
 int main() {
