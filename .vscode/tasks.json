@@ -6,7 +6,7 @@
             "label": "C++",
             "command": "clang++",
             "args": [
-                "--std=c++2a",
+                "--std=c++26",
                 "-g",
                 // "-Wall",
                 "-o",

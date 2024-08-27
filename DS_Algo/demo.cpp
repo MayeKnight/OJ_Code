@@ -14,6 +14,8 @@ auto print_seq = [](auto rem, auto first, auto last) {
 };
 
 /*
+    ssize
+
     bitset<>  bit_width
 
     foreach
@@ -43,6 +45,7 @@ int main() {
     std::set<char> set(str.begin(), str.end());
     std::vector<char> tmp {'s', 'a', 'b'};
     std::cout << std::boolalpha << std::ranges::includes(str, tmp) << "\n";
+    std::cout << std::min(ssize(set), 5ll) << std::endl;
 
     for (const int& i : std::ranges::iota_view(1) | std::ranges::views::take(10)) {
         std::printf("%d ", i);
