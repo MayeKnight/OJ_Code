@@ -6,39 +6,53 @@ static constexpr int MOD = 1e9 + 7;
 
 class Solution {
 public:
-    int minimumSubstringsInPartition(string s) {
+    //* 记忆化搜索
+    int _minimumSubstringsInPartition(string s) {
         int n = s.size();
-        vector<int> memo(n + 1, -1);
-        memo[n] = 0;
-        function<int(int)> dfs = [&](int x) -> int {
-            int& res = memo[x];
-            if (res != -1) {
+        vector<int> memo(n);
+        auto dfs = [&](auto&& self, int i) -> int {
+            if (i < 0) {
+                return 0;
+            }
+
+            int& res = memo[i];
+            if (res) {
                 return res;
             }
 
-            vector<int> nums(26);
-            unordered_map<int, int> ump;
-            int ans = INT_MAX;
-            for (int i = x; i < n; ++i) {
-                int num = nums[s[i] - 'a'];
-                if (num > 0) {
-                    ump[num]--;
-                    if (ump[num] == 0) {
-                        ump.erase(num);
-                    }
-                }
-                nums[s[i] - 'a']++;
-                num = nums[s[i] - 'a'];
-                ump[num]++;
-
-                if (ump.size() == 1) {
-                    ans = min(ans, dfs(i + 1) + 1);
+            res = INT_MAX;
+            vector<int> cnt(26);
+            int k = 0, mx = 0;
+            for (int j = i; j >= 0; --j) {
+                k += cnt[s[j] - 'a']++ == 0;
+                mx = max(mx, cnt[s[j] - 'a']);
+                if (i - j + 1 == k * mx) {
+                    res = min(res, self(self, j - 1) + 1);
                 }
             }
-            return res = ans;
+            return res;
         };
-        dfs(0);
-        return memo[0];
+        return dfs(dfs, n - 1);
+    }
+
+    //* 递推
+public:
+    int minimumSubstringsInPartition(string s) {
+        int n = s.size();
+        vector<int> f(n + 1, INT_MAX);
+        f[0] = 0;
+        for (int i = 0; i < n; ++i) {
+            vector<int> cnt(26);
+            int k = 0, mx = 0;
+            for (int j = i; j >= 0; --j) {
+                k += cnt[s[j] - 'a']++ == 0;
+                mx = max(mx, cnt[s[j] - 'a']);
+                if (i - j + 1 == k * mx) {
+                    f[i + 1] = min(f[i + 1], f[j] + 1);
+                }
+            }
+        }
+        return f[n];
     }
 };
 
