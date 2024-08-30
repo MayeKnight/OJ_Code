@@ -11,14 +11,14 @@ public:
         vector<vector<int>> vec(m, vector<int>(10));
         long long ans = 0;
         for (int& num : nums) {
+            string s = to_string(num);
             for (int i = 0; i < m; ++i) {
-                char ch = to_string(num)[i];
                 for (int j = 0; j < 10; ++j) {
-                    if (j != ch - '0') {
+                    if (j != s[i] - '0') {
                         ans += vec[i][j];
                     }
                 }
-                vec[i][ch - '0']++;
+                vec[i][s[i] - '0']++;
             }
         }
         return ans;
